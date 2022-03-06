@@ -1,4 +1,4 @@
-package starter.lichess.tests;
+package starter.lichess;
 
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.serenitybdd.screenplay.Actor;
