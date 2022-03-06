@@ -17,7 +17,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.is;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class ChessLiIT {
+public class WhenLearningChess {
 
     @Managed()
     private WebDriver browser;
