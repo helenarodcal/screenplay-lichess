@@ -17,7 +17,7 @@ public class Complete implements Performable {
     }
 
     @Override
-    @Step("{0} starts the tutorial")
+    @Step("{0} completes the tutorial")
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(

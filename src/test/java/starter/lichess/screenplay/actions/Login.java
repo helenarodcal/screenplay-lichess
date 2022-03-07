@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Open;
+import net.thucydides.core.annotations.Step;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 import org.openqa.selenium.Keys;
 import starter.lichess.screenplay.pages.LoginPage;
@@ -29,6 +30,7 @@ public class Login implements Performable {
     }
 
     @Override
+    @Step("{0} logs into the app")
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
