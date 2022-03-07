@@ -1,0 +1,4 @@
+interface Performable {
+
+    fun perform()
+}
