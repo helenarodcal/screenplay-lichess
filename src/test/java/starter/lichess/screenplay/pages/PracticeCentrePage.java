@@ -3,7 +3,7 @@ package starter.lichess.screenplay.pages;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class Learn {
+public class PracticeCentrePage {
     public static final Target RESET_PROGRESS = Target.the("reset progress option in sidebar")
             .locatedBy(".learn__side-home .actions .confirm");
     public static final Target ONGOING_TUTORIAL = Target.the("ongoing tutorial link")

@@ -10,6 +10,9 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
+import starter.lichess.screenplay.actions.Complete;
+import starter.lichess.screenplay.actions.Login;
+import starter.lichess.screenplay.actions.Start;
 import starter.lichess.screenplay.actions.Tutorial;
 import starter.lichess.screenplay.questions.TutorialProgress;
 
@@ -22,18 +25,20 @@ public class WhenLearningChess {
     @Managed()
     private WebDriver browser;
 
-    @Steps
-    Tutorial tutorial;
-
     @Test
     public void whenPlayingTheFirstTutorial() {
         Actor actor = new Actor("chess player");
         actor.can(BrowseTheWeb.with(browser));
 
-//        actor.attemptsTo(new StartTutorial());
-        actor.attemptsTo(tutorial.start());
+        actor.attemptsTo(
+                Login.as("helenarodcal"),
+                Start.tutorial()
+        );
+
         actor.should(seeThat("tutorial 1 is not marked done",TutorialProgress.isFinished(), is(false)));
-        actor.attemptsTo(tutorial.complete());
+        actor.attemptsTo(
+                Complete.tutorial()
+        );
         actor.should(seeThat("tutorial 1 is marked done",
                 WebElementQuestion.the(".progress a:nth-child(1) .stars"), WebElementStateMatchers.isPresent()
         ));
