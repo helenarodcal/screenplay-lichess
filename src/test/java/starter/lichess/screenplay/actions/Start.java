@@ -13,8 +13,10 @@ import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 import org.openqa.selenium.Keys;
+import starter.lichess.screenplay.pages.LandingPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static starter.lichess.screenplay.pages.LandingPage.PRACTICE_LINK;
 import static starter.lichess.screenplay.pages.PracticeCentrePage.*;
 import static starter.lichess.screenplay.pages.PracticeCentrePage.RESET_PROGRESS;
 
@@ -29,6 +31,7 @@ public class Start implements Performable {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
+                Click.on(PRACTICE_LINK).afterWaitingUntilEnabled(),
                 ResetTutorialProgress(),
                 Click.on(ONGOING_TUTORIAL),
                 Click.on(START_BUTTON)

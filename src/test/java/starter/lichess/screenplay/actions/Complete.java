@@ -3,7 +3,6 @@ package starter.lichess.screenplay.actions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.thucydides.core.annotations.Step;
-import starter.lichess.screenplay.pages.TutorialPage;
 import starter.lichess.screenplay.utils.HoverOverAndClick;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;

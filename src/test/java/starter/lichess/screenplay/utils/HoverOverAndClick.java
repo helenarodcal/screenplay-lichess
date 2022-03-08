@@ -1,8 +1,5 @@
 package starter.lichess.screenplay.utils;
 
-import net.serenitybdd.core.annotations.findby.By;
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -23,7 +20,7 @@ public class HoverOverAndClick extends UIInteractionSteps implements Performable
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        WebElementFacade element = find(elementLocator);
+        WebElement element = elementLocator.resolveFor(actor).getElement();
         WebDriver driver = BrowseTheWeb.as(actor).getDriver();
 
         Actions actions = new Actions(driver);
